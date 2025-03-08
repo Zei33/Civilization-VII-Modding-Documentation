@@ -43,33 +43,47 @@ function OnCityBuilt(playerID, cityID, x, y)
 end
 
 -- Register the handler function for the event
-GameEvents.CityBuilt.Add(OnCityBuilt);
+Events.CityBuilt.Add(OnCityBuilt);
 
 -- Alternative inline syntax
-GameEvents.CityBuilt.Add(function(playerID, cityID, x, y)
+Events.CityBuilt.Add(function(playerID, cityID, x, y)
     print("City built by player " .. playerID .. " at " .. x .. "," .. y);
     -- Your code here
+end);
+
+-- Register for UI script events
+Events.ScriptEvent.Add("RequestData", function(params)
+    -- Process the request
+    local data = ProcessRequest(params);
+    
+    -- Send response back to UI
+    UI.QueueEvent("DataResponse_" .. params.requestId, data);
 end);
 ```
 
 ### Registering Event Listeners in JavaScript (UI)
 
 ```javascript
-// Basic event registration
-function onResourcesUpdated(data) {
-    console.log("Resources updated:", data);
-    document.getElementById("GoldAmount").textContent = data.gold;
-    // Update other UI elements
-}
+// Basic event registration for engine events
+engine.on('CitySelectionChanged', function(data) {
+    console.log("City selected:", data);
+    // Update UI elements
+    document.getElementById("CityName").textContent = data.cityName;
+});
 
-// Register the handler function for the event
-GameEvents.RegisterListener("ResourcesUpdated", onResourcesUpdated);
+// Registering one-time event listeners with cleanup
+const requestId = "DataRequest_" + Date.now();
+engine.on('DataResponse_' + requestId, function(data) {
+    // Clean up this one-time handler when done
+    engine.off('DataResponse_' + requestId);
+    
+    console.log("Received response:", data);
+    updateUI(data);
+});
 
-// Alternative inline syntax
-GameEvents.RegisterListener("ResourcesUpdated", function(data) {
-    console.log("Resources updated:", data);
-    document.getElementById("GoldAmount").textContent = data.gold;
-    // Update other UI elements
+// Handling DOM events
+document.getElementById("ResearchButton").addEventListener("click", function() {
+    onResearchButtonClicked();
 });
 ```
 
@@ -78,18 +92,45 @@ GameEvents.RegisterListener("ResourcesUpdated", function(data) {
 ```javascript
 // Send a simple event to the game
 function onResearchButtonClicked() {
-    GameEvents.SendMessage("SelectResearch", { techType: "TECH_WRITING" });
+    engine.trigger("SelectResearch", { techType: "TECH_WRITING" });
 }
 
-// Request data from the game
-async function loadCityDetails(cityID) {
-    try {
-        const cityData = await GameEvents.RequestData("GetCityDetails", { cityID: cityID });
-        updateCityPanel(cityData);
-    } catch (error) {
-        console.error("Failed to get city details:", error);
-    }
+// Request data from the game using request-response pattern
+function loadCityDetails(cityID) {
+    // Create unique request ID
+    const requestId = "CityDetails_" + Date.now();
+    
+    // Set up one-time listener for response
+    engine.on('CityDetailsResponse_' + requestId, function(data) {
+        // Clean up this one-time handler
+        engine.off('CityDetailsResponse_' + requestId);
+        
+        // Process response
+        if (data.success) {
+            updateCityPanel(data.cityData);
+        } else {
+            console.error("Failed to get city details:", data.error);
+        }
+    });
+    
+    // Send the request with the ID
+    engine.trigger("RequestCityDetails", { 
+        cityID: cityID,
+        requestId: requestId 
+    });
 }
+```
+
+### Text Localization in UI
+
+```javascript
+// Get localized text
+const buttonText = Locale.Lookup("LOC_BUTTON_RESEARCH");
+document.getElementById("ResearchButton").textContent = buttonText;
+
+// Get localized text with parameters
+const buildingFinished = Locale.Lookup("LOC_BUILDING_COMPLETED", buildingName, cityName);
+UI.ShowPopupNotification(buildingFinished, "positive");
 ```
 
 ## UI-to-Game Events

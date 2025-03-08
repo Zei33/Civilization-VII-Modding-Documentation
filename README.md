@@ -6,7 +6,7 @@
 Welcome to the unofficial documentation for modding Civilization VII. This comprehensive resource will guide you through all aspects of modding, from basic concepts to advanced techniques.
 
 > [!WARNING]
-> There is no guarantee on the accuracy of this documentation or the template examples provided. If you come across a mistake or have a suggestion, please fork the repo and make a PR to correct it.
+> This documentation is in beta. There is no guarantee on the accuracy of this documentation or the template examples provided. If you come across a mistake or have a suggestion, please fork the repo and make a PR to correct it.
 
 ## Getting Started
 

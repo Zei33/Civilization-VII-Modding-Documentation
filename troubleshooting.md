@@ -42,6 +42,14 @@ This guide addresses common issues that modders encounter when developing mods f
    - On Steam: Right-click the game → Properties → Local Files → Verify Integrity of Game Files
    - On Epic: Library → Three dots next to Civilization VII → Verify
 
+5. **API Compatibility**:
+   - Use the correct API interfaces:
+     - Use `engine.on()` and `engine.trigger()` instead of `UIEvents.on()` and `GameEvents.SendMessage()`
+     - Use `Locale.Lookup()` instead of `Game.Localize()`
+     - Use `UI.ShowPopupNotification()` instead of `UI.ShowNotification()`
+   - Implement a proper request-response pattern for asynchronous communication
+   - Using incorrect API interfaces is a common cause of non-functional mods
+
 > **See Also:** For a basic understanding of mod structure, refer to the [Mod Structure Guide](./mod-structure.md).
 
 ## Mod Not Appearing
@@ -238,6 +246,66 @@ When your UI modifications aren't working correctly:
 2. **Path Matching**:
    - UI replacements must match the original file path exactly
    - Check for case sensitivity in file paths
+
+### UI-Game Communication Issues
+
+1. **Using Deprecated APIs**:
+   - **Problem**: Non-functional UI when using outdated API methods
+   - **Solution**: Replace deprecated interfaces with the supported engine APIs:
+     ```javascript
+     // INCORRECT
+     UIEvents.on("ElementName", "click", function() {...});
+     GameEvents.SendMessage("GameEvent", data);
+     
+     // CORRECT
+     document.getElementById("ElementName").addEventListener("click", function() {...});
+     engine.trigger("GameEvent", data);
+     ```
+
+2. **Event Communication**:
+   - **Problem**: UI sends events but game doesn't respond
+   - **Solution**: Use request-response pattern with unique IDs:
+     ```javascript
+     // Generate unique request ID
+     const requestId = "DataRequest_" + Date.now();
+     
+     // Listen for response with this specific ID
+     engine.on('DataResponse_' + requestId, function(data) {
+       // Clean up the listener when done
+       engine.off('DataResponse_' + requestId);
+       // Process response...
+     });
+     
+     // Send request with the ID
+     engine.trigger("RequestData", { requestId: requestId, /* other params */ });
+     ```
+
+3. **Script Registration Issues**:
+   - **Problem**: Lua script doesn't handle UI events
+   - **Solution**: Use the correct event registration and response pattern:
+     ```lua
+     -- Register for UI events in Lua
+     Events.ScriptEvent.Add("RequestData", function(params)
+       -- Process the request
+       local result = ProcessTheRequest(params);
+       
+       -- Send response back to UI
+       UI.QueueEvent("DataResponse_" .. params.requestId, result);
+     end);
+     ```
+
+4. **Localization and Notifications**:
+   - **Problem**: Text not displaying or notifications not showing
+   - **Solution**: Use the correct API methods:
+     ```javascript
+     // INCORRECT
+     const text = Game.Localize("LOC_TEXT_KEY");
+     UI.ShowNotification(text, "positive");
+     
+     // CORRECT
+     const text = Locale.Lookup("LOC_TEXT_KEY");
+     UI.ShowPopupNotification(text, "positive");
+     ```
 
 3. **Base Game Updates**:
    - Game updates might have changed the UI structure
@@ -631,324 +699,4 @@ When your mod causes problems in multiplayer games:
    - `luadebug` - Enables additional Lua debugging
    - `player Gold 10000` - Gives current player 10,000 gold
    - `player AddAllTechs` - Unlocks all technologies
-   - `player AddAllCivics` - Unlocks all civics
-   - `debugresources` - Shows resource details
-   - `debugyields` - Shows tile yield details
-   - `debug ai` - Displays AI decision-making information
-
-3. **Custom Debug Commands**:
-   ```lua
-   -- Register a custom debug command
-   function OnDebugCommand(command, parameters)
-     if command == "testmod" then
-       print("Testing mod functionality...");
-       TestModFunction(parameters[1]);
-       return true;
-     end
-     return false;
-   end
-   
-   Events.DebugCommand.Add(OnDebugCommand);
-   
-   -- Usage in console: testmod parameter1
-   ```
-
-### Enabling Debug Databases
-
-The game can generate copies of its databases for debugging purposes:
-
-1. **Enable Database Copying**:
-   - Locate the "AppOptions.txt" file:
-     - Windows: `\AppData\Local\Firaxis Games\Sid Meier's Civilization VII\`
-     - macOS: `~/Library/Application Support/Sid Meier's Civilization VII/`
-     - Linux: `~/.local/share/Sid Meier's Civilization VII/`
-   
-   - Find this section and change the setting:
-   ```
-   ;Make copies of commonly used databases to disk after they have been updated.
-   ;CopyDatabasesToDisk 0
-   ```
-   
-   - Change it to:
-   ```
-   CopyDatabasesToDisk 1
-   ```
-   (Be sure to remove the semicolon at the beginning)
-
-2. **Accessing the Databases**:
-   - Databases will be copied to the "Debug" folder in the same directory
-   - Two main databases are generated:
-     - FrontEnd Database (Config)
-     - GamePlay Database
-   - You can open these with any SQLite browser to examine the game's data
-
-3. **Using Debug Databases**:
-   - Examine table structures to understand relationships
-   - Check values to debug unexpected behavior
-   - Compare with your SQL modifications to identify issues
-   - Track dynamic changes in gameplay values
-
-### Advanced Logs
-
-1. **Enabling Detailed Logs**:
-   - Edit the game's configuration to increase log detail
-   - Look for logging configurations in the game's settings folder
-
-2. **Creating Custom Logs**:
-   ```lua
-   -- Custom logging function
-   function LogToFile(message)
-     local logFile = io.open("MyModLog.txt", "a");
-     if logFile then
-       logFile:write(os.date("%Y-%m-%d %H:%M:%S") .. ": " .. message .. "\n");
-       logFile:close();
-     end
-   end
-   
-   -- Usage
-   LogToFile("Unit created: " .. unitType);
-   ```
-
-3. **Structured Logging**:
-   ```lua
-   -- Create different log levels
-   local LOG_LEVELS = {
-     ERROR = 1,
-     WARNING = 2,
-     INFO = 3,
-     DEBUG = 4
-   };
-   
-   local CURRENT_LOG_LEVEL = LOG_LEVELS.INFO; -- Set your desired level
-   
-   function Log(level, message)
-     if level <= CURRENT_LOG_LEVEL then
-       local prefix = "";
-       if level == LOG_LEVELS.ERROR then prefix = "ERROR: ";
-       elseif level == LOG_LEVELS.WARNING then prefix = "WARNING: ";
-       elseif level == LOG_LEVELS.INFO then prefix = "INFO: ";
-       elseif level == LOG_LEVELS.DEBUG then prefix = "DEBUG: "; end
-       
-       print(prefix .. message);
-     end
-   end
-   
-   -- Usage
-   Log(LOG_LEVELS.ERROR, "Critical failure in unit processing");
-   Log(LOG_LEVELS.DEBUG, "Variable value: " .. someValue); -- Only prints if debug enabled
-   ```
-
-### External Tools
-
-1. **SQLite Browser**:
-   - Use DB Browser for SQLite to examine game databases
-   - Test SQL queries before adding them to your mod
-
-2. **XML Validators**:
-   - Use online validators or tools like XMLStarlet
-   - Validate XML files to catch syntax errors
-
-3. **Lua Linters**:
-   - Tools like Luacheck can find common Lua errors
-   - Integrate with your development environment for real-time feedback
-
-> **Related Topic:** For gameplay-specific debugging, see the [Gameplay Modding Guide](./gameplay-modding.md#debugging-gameplay-mods).
-
-## Common Error Messages
-
-### Interpreting Error Messages
-
-1. **"File not found"**:
-   - Check file paths in your `.modinfo` file
-   - Verify that the file exists in the specified location
-   - Remember that paths are case-sensitive
-
-2. **"Nil value"**:
-   - In Lua, you're trying to access a variable or property that doesn't exist
-   - Add checks for nil values before accessing properties
-
-3. **"Foreign key constraint failed"**:
-   - In SQL, you're trying to reference a value that doesn't exist
-   - Ensure parent records are created before child records
-   - Check that referenced values exist in the appropriate tables
-
-4. **"Out of memory"**:
-   - Your mod might be using too many resources
-   - Check for memory leaks or excessive asset loading
-   - Optimize resource usage, especially for large maps
-
-### Solutions for Common Errors
-
-1. **XML Parsing Errors**:
-   - Look for unclosed tags, improper nesting, or invalid characters
-   - Use an XML validator to identify and fix issues
-
-2. **SQL Syntax Errors**:
-   - Check for missing semicolons, incorrect quotes, or typos
-   - Test queries in a SQLite browser first
-
-3. **Lua Runtime Errors**:
-   - Add error handling with pcall:
-     ```lua
-     local success, error = pcall(function()
-       -- Potentially problematic code
-       DoSomethingRisky();
-     end);
-     
-     if not success then
-       print("Error occurred: " .. tostring(error));
-     end
-     ```
-
-> **See Also:** For database-specific errors, refer to the [Database Modding Guide](./database-modding.md#common-pitfalls).
-
-## Compatibility with Other Mods
-
-When your mod conflicts with other mods:
-
-### Identifying Mod Conflicts
-
-1. **Systematic Testing**:
-   - Disable all mods except yours
-   - Add other mods one by one to identify conflicts
-   - Use binary search for large mod collections (disable half, test, repeat)
-
-2. **Check for Overlapping Changes**:
-   - Multiple mods editing the same files
-   - Mods changing the same database entries
-   - Mods using the same global variables in Lua
-
-3. **Log Analysis**:
-   - Look for error messages related to specific mods
-   - Check for database constraint failures mentioning other mods
-
-### Resolving Mod Conflicts
-
-1. **Load Order Adjustments**:
-   - Set appropriate load orders to control which mod's changes take precedence:
-     ```xml
-     <ActionGroup id="my-mod-changes">
-       <Properties>
-         <LoadOrder>100</LoadOrder> <!-- Higher numbers load later and can override -->
-       </Properties>
-       <!-- Actions -->
-     </ActionGroup>
-     ```
-
-2. **Namespacing Your Content**:
-   - Use unique prefixes for your database entries:
-     ```sql
-     -- Instead of generic names
-     INSERT INTO Types (Type, Kind)
-     VALUES ('BUILDING_LIBRARY', 'KIND_BUILDING'); -- Might conflict
-     
-     -- Use namespaced names
-     INSERT INTO Types (Type, Kind)
-     VALUES ('BUILDING_MYUSERNAME_LIBRARY', 'KIND_BUILDING'); -- Less likely to conflict
-     ```
-   - Use unique identifiers for UI elements:
-     ```xml
-     <!-- Instead of -->
-     <Button ID="SettingsButton">
-     
-     <!-- Use -->
-     <Button ID="MyMod_SettingsButton">
-     ```
-
-3. **Compatibility Patches**:
-   - Create specific patches for popular mods:
-     ```xml
-     <ActionCriteria>
-       <Criteria id="other-mod-active">
-         <ActiveMod>other-mod-id</ActiveMod>
-       </Criteria>
-     </ActionCriteria>
-     
-     <ActionGroups>
-       <ActionGroup id="compatibility-patch" criteria="other-mod-active">
-         <Actions>
-           <UpdateDatabase>
-             <Item>data/other_mod_compatibility.sql</Item>
-           </UpdateDatabase>
-         </Actions>
-       </ActionGroup>
-     </ActionGroups>
-     ```
-
-> **Related Topic:** For designing more compatible mods from the start, see the [Mod Structure Guide](./mod-structure.md#designing-for-compatibility).
-
-## Getting Help from the Community
-
-When you need assistance with challenging problems:
-
-### Preparing for Community Help
-
-1. **Document the Issue Thoroughly**:
-   - Describe exactly what's happening
-   - List steps to reproduce the problem
-   - Include your mod files (or relevant excerpts)
-   - Share any error messages or logs
-
-2. **Create a Minimal Example**:
-   - Strip down your mod to just the problematic part
-   - Create a simplified version that still shows the issue
-
-3. **Try Basic Troubleshooting First**:
-   - Show that you've already tried the obvious solutions
-   - Document what you've attempted so far
-
-### Community Resources
-
-1. **Official Forums**:
-   - Post in the Civilization modding forums
-   - Follow the forum's guidelines for help requests
-
-2. **Discord Channels**:
-   - Join the official Civilization Discord
-   - Look for modding-specific channels
-
-3. **Modding Communities**:
-   - CivFanatics has a dedicated modding section
-   - Reddit's r/civ has modding discussions
-
-4. **GitHub/GitLab**:
-   - Some modders share their work on GitHub
-   - Look at similar mods for solutions to common problems
-
-### Giving Back
-
-1. **Document Your Solutions**:
-   - When you solve a problem, share the solution
-   - Consider creating tutorials for difficult aspects
-
-2. **Help Others**:
-   - Answer questions from less experienced modders
-   - Share code snippets and examples
-
-3. **Contribute to Shared Resources**:
-   - Help maintain shared libraries and tools
-   - Contribute to modding documentation
-
-## Related Documentation
-
-For more information on topics mentioned in this troubleshooting guide, refer to these related documents:
-
-- [Quick Start Guide](./quick-start-guide.md) - For basic modding concepts
-- [Mod Structure](./mod-structure.md) - For understanding mod organization
-- [Database Modding](./database-modding.md) - For database-related issues
-- [UI Modding](./ui-modding.md) - For UI-specific troubleshooting
-- [Asset Creation](./asset-creation.md) - For asset-related problems
-- [Advanced Topics](./advanced-topics.md) - For complex scripting issues
-- [Gameplay Modding](./gameplay-modding.md) - For gameplay modification issues
-
-## Conclusion
-
-Troubleshooting is an essential skill for modding Civilization VII. By systematically identifying and addressing issues, you can create stable, high-quality mods that enhance the game experience.
-
-Remember that the modding community is a valuable resource. When you encounter challenges, don't hesitate to seek help, and when you overcome obstacles, share your knowledge to help others.
-
-Most importantly, keep backups of your work, test changes incrementally, and maintain comprehensive documentation of your mod. These practices will make troubleshooting easier and help prevent issues before they occur.
-
----
-
-*This guide will be updated as new common issues and solutions are identified. If you discover a problem and solution not covered here, consider contributing to this documentation.* 
+   - `player AddAllCivics`

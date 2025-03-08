@@ -167,16 +167,38 @@ To add new functionality to the UI:
 ```javascript
 (function() {
 	// Add a click handler to a button
-	UIEvents.on("CityViewButton", "click", function() {
+	document.getElementById("CityViewButton").addEventListener("click", function() {
 		// Do something when the button is clicked
-		GameEvents.SendMessage("OpenCityView");
+		engine.trigger("OpenCityView", {
+			cityID: UI.Player.getHeadSelectedCity()
+		});
 	});
 	
-	// Listen for game events
-	GameEvents.RegisterListener("CityProductionCompleted", function(data) {
+	// Listen for game engine events
+	engine.on("CityProductionCompleted", function(data) {
 		// Update UI when production is completed
 		updateProductionQueue(data);
 	});
+	
+	// Using a request-response pattern for data
+	function requestCityData(cityID) {
+		const requestId = "CityData_" + Date.now();
+		
+		// Set up one-time handler for the response
+		engine.on('CityDataResponse_' + requestId, function(data) {
+			// Clean up this one-time handler
+			engine.off('CityDataResponse_' + requestId);
+			
+			// Process the response
+			updateCityPanel(data);
+		});
+		
+		// Send the request
+		engine.trigger("RequestCityData", {
+			cityID: cityID,
+			requestId: requestId
+		});
+	}
 	
 	function updateProductionQueue(data) {
 		// Update the production queue display
@@ -188,29 +210,90 @@ To add new functionality to the UI:
 
 ## Communication Between UI and Game
 
-Coherent UI provides several methods for UI-Game communication:
+Civilization VII uses the Coherent UI engine for UI-Game communication. The correct APIs to use are:
 
-### Game to UI
+### Game to UI Communication
+
+The game engine sends events to the UI using the engine event system:
+
 ```javascript
-// In the game code (not directly accessible to modders)
-UI.Call("functionName", parameter1, parameter2);
+// In your JavaScript, listen for engine events:
+engine.on('CitySelectionChanged', function(data) {
+	// Handle city selection change
+	console.log("City selected:", data.cityID);
+	updateCityPanel(data.cityID);
+});
 
-// In your JavaScript
-window.functionName = function(param1, param2) {
-	// Handle the call from the game
-};
+// Listen for one-time events with unique requestIds
+const requestId = "DataRequest_" + Date.now();
+engine.on('DataResponse_' + requestId, function(response) {
+	// Clean up this one-time handler
+	engine.off('DataResponse_' + requestId);
+	
+	// Handle the response
+	console.log("Got data:", response);
+});
 ```
 
-### UI to Game
-```javascript
-// In your JavaScript
-GameEvents.SendMessage("EventName", { data: "value" });
+### UI to Game Communication
 
-// In the game code (not directly accessible to modders)
-// The game has event handlers for these messages
+To send messages from the UI to the game, use `engine.trigger()`:
+
+```javascript
+// Simple event trigger
+engine.trigger("SelectCity", { cityID: 42 });
+
+// Request-response pattern with unique ID
+const requestId = "DataRequest_" + Date.now();
+engine.trigger("RequestCityData", { 
+	cityID: 42,
+	requestId: requestId  // Include a unique ID for the response
+});
 ```
 
-> **Related Topic:** For advanced interaction with game systems, see the [Advanced Topics Guide](./advanced-topics.md#event-system-integration).
+### Handling Events in Lua
+
+In your Lua scripts, register for UI events using:
+
+```lua
+-- Register for UI events
+Events.ScriptEvent.Add("RequestCityData", function(params)
+	-- Extract parameters
+	local cityID = params.cityID;
+	local requestId = params.requestId;
+	
+	-- Process the request...
+	
+	-- Send response back to UI
+	UI.QueueEvent("DataResponse_" .. requestId, {
+		success = true,
+		data = cityData
+	});
+end);
+```
+
+### Notifications
+
+To show notifications to the player:
+
+```javascript
+// Show a notification popup
+UI.ShowPopupNotification(
+	Locale.Lookup("LOC_NOTIFICATION_TEXT", parameter1, parameter2),
+	"positive"  // or "negative", "neutral"
+);
+```
+
+### Text Localization
+
+To access localized text:
+
+```javascript
+// Get localized text with parameters
+const text = Locale.Lookup("LOC_TEXT_KEY", parameter1, parameter2);
+```
+
+> **Note:** The older `GameEvents.SendMessage()`, `UIEvents.on()`, and `Game.Localize()` interfaces are not recommended as they may not be fully supported by the game engine.
 
 ## Common UI Modding Patterns
 

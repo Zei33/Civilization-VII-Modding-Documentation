@@ -172,20 +172,53 @@ Coherent UI extends the standard JavaScript API with game-specific functionality
 
 ### Engine Communication
 
-Communicate between UI and game:
+Communicate between UI and game using the engine's event system:
 
 ```javascript
-// Send a message to the game
-GameEvents.SendMessage("BuildUnit", {
+// Send a message to the game engine
+engine.trigger("BuildUnit", {
   unitType: "UNIT_WARRIOR",
   cityID: 42
 });
 
-// Listen for messages from the game
-GameEvents.RegisterListener("UnitCreated", function(data) {
+// Listen for messages from the game engine
+engine.on("UnitCreated", function(data) {
+  console.log("Unit created:", data);
   updateUnitPanel(data.unitID, data.unitType);
 });
+
+// Using request-response pattern with unique IDs
+function requestTechInfo(techType) {
+  const requestId = "TechInfo_" + Date.now();
+  
+  // Set up one-time listener for the response
+  engine.on("TechInfoResponse_" + requestId, function(data) {
+    // Clean up this one-time handler
+    engine.off("TechInfoResponse_" + requestId);
+    
+    // Process the response
+    displayTechInfo(data);
+  });
+  
+  // Send the request with request ID
+  engine.trigger("RequestTechInfo", {
+    techType: techType,
+    requestId: requestId
+  });
+}
+
+// Localize text
+const text = Locale.Lookup("LOC_TECH_WRITING_NAME");
+document.getElementById("TechName").textContent = text;
+
+// Show notifications
+UI.ShowPopupNotification(
+  Locale.Lookup("LOC_NOTIFICATION_TECH_DISCOVERED", techName),
+  "positive"
+);
 ```
+
+> **Note:** The older interfaces `GameEvents.SendMessage()`, `UIEvents.on()`, and `Game.Localize()` are not recommended as they may not be fully supported by the engine.
 
 ### View Manipulation
 
