@@ -35,11 +35,11 @@ graph TD
     A -->|references| C[Buildings]
     A -->|references| D[Improvements]
     LEADERS -->|references| LEADER_TRAITS
-    LEADERS ||--o{ LEADER_TRAITS : has
-    CIVILIZATIONS ||--o{ CIVILIZATION_TRAITS : has
+    LEADERS --|o{ LEADER_TRAITS : has
+    CIVILIZATIONS --|o{ CIVILIZATION_TRAITS : has
     UNITS --> UNIT_ABILITIES
     BUILDINGS --> BUILDING_EFFECTS
-    TERRAINS ||--o{ TERRAIN_FEATURES : contains
+    TERRAINS --|o{ TERRAIN_FEATURES : contains
 ```
 
 The database is organized with specific relationships between tables, maintaining referential integrity to ensure data consistency.
