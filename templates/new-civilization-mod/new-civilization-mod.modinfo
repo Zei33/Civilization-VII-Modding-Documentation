@@ -2,7 +2,7 @@
 <Mod id="com.example.new-civilization-mod" version="1"
 	xmlns="ModInfo">
 	<Properties>
-		<n>LOC_MOD_CUSTOM_CIVILIZATION_NAME</n>
+		<Name>LOC_MOD_CUSTOM_CIVILIZATION_NAME</Name>
 		<Description>LOC_MOD_CUSTOM_CIVILIZATION_DESCRIPTION</Description>
 		<Authors>Your Name</Authors>
 		<Package>Mod</Package>

@@ -2,7 +2,7 @@
 <Mod id="com.example.basic-database-mod" version="1"
 	xmlns="ModInfo">
 	<Properties>
-		<n>Basic Database Modification</n>
+		<Name>Basic Database Modification</Name>
 		<Description>A template mod that demonstrates how to modify the game database.</Description>
 		<Authors>Your Name</Authors>
 		<Package>Mod</Package>

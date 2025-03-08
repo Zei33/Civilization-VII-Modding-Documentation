@@ -2,7 +2,7 @@
 <Mod id="com.example.gameplay-balance-mod" version="1"
 	xmlns="ModInfo">
 	<Properties>
-		<n>Enhanced Gameplay Balance</n>
+		<Name>Enhanced Gameplay Balance</Name>
 		<Description>A comprehensive gameplay balance mod that adjusts units, buildings, technologies, and civics to create a more balanced and enjoyable game experience.</Description>
 		<Authors>Your Name</Authors>
 		<Package>Mod</Package>

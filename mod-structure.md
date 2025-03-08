@@ -67,7 +67,7 @@ The `.modinfo` file is an XML file that defines your mod to the game. It must be
 <Mod id="com.example.myawesomemod" version="1"
 	xmlns="ModInfo">
 	<Properties>
-		<n>My Awesome Mod</n>
+		<Name>My Awesome Mod</Name>
 		<Description>Description of what your mod does.</Description>
 		<Authors>Your Name</Authors>
 		<Package>Mod</Package>
@@ -104,7 +104,7 @@ The `.modinfo` file is an XML file that defines your mod to the game. It must be
 1. **Mod ID**: A unique identifier for your mod. Use reverse domain notation (e.g., `com.yourusername.modname`).
 2. **Version**: The version number of your mod.
 3. **Properties**:
-   - `<n>`: The display name of your mod.
+   - `<Name>`: The display name of your mod.
    - `<Description>`: A brief description of what your mod does.
    - `<Authors>`: The mod creator's name.
    - `<Package>`: The type of package (usually "Mod").

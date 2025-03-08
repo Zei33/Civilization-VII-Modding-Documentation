@@ -2,7 +2,7 @@
 <Mod id="com.example.mapscript-archipelago" version="1"
 	xmlns="ModInfo">
 	<Properties>
-		<n>LOC_MAPSCRIPT_CUSTOM_ARCHIPELAGO_NAME</n>
+		<Name>LOC_MAPSCRIPT_CUSTOM_ARCHIPELAGO_NAME</Name>
 		<Description>LOC_MAPSCRIPT_CUSTOM_ARCHIPELAGO_DESCRIPTION</Description>
 		<Authors>Your Name</Authors>
 		<Package>Mod</Package>

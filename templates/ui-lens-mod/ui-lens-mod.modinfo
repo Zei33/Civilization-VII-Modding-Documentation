@@ -2,7 +2,7 @@
 <Mod id="com.example.resource-potential-lens" version="1"
 	xmlns="ModInfo">
 	<Properties>
-		<n>LOC_MOD_RESOURCE_LENS_NAME</n>
+		<Name>LOC_MOD_RESOURCE_LENS_NAME</Name>
 		<Description>LOC_MOD_RESOURCE_LENS_DESCRIPTION</Description>
 		<Authors>Your Name</Authors>
 		<Package>Mod</Package>

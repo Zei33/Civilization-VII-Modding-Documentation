@@ -2,7 +2,7 @@
 <Mod id="com.example.ui-enhancement-mod" version="1"
 	xmlns="ModInfo">
 	<Properties>
-		<n>LOC_MOD_ENHANCED_TOOLTIP_NAME</n>
+		<Name>LOC_MOD_ENHANCED_TOOLTIP_NAME</Name>
 		<Description>LOC_MOD_ENHANCED_TOOLTIP_DESCRIPTION</Description>
 		<Authors>Your Name</Authors>
 		<Package>Mod</Package>

@@ -2,7 +2,7 @@
 <Mod id="com.example.custom-resources" version="1"
 	xmlns="ModInfo">
 	<Properties>
-		<n>Custom Resources Pack</n>
+		<Name>Custom Resources Pack</Name>
 		<Description>Adds new luxury resources to the game: Coffee and Jade.</Description>
 		<Authors>Your Name</Authors>
 		<Package>Mod</Package>

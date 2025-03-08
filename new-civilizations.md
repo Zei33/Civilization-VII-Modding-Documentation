@@ -98,7 +98,7 @@ myciv-ottoman-empire/
 <?xml version="1.0" encoding="utf-8"?>
 <Mod id="com.example.myciv-ottoman-empire" version="1" xmlns="ModInfo">
 	<Properties>
-		<n>Ottoman Empire Civilization Pack</n>
+		<Name>Ottoman Empire Civilization Pack</Name>
 		<Description>Adds the Ottoman Empire civilization led by Suleiman the Magnificent.</Description>
 		<Authors>Your Name</Authors>
 		<Package>Mod</Package>

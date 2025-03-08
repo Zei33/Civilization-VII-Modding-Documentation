@@ -259,7 +259,7 @@ CustomMapMod/
 <?xml version="1.0" encoding="utf-8"?>
 <Mod id="com.example.custom-earth-map" version="1" xmlns="ModInfo">
 	<Properties>
-		<n>Custom Earth Map</n>
+		<Name>Custom Earth Map</Name>
 		<Description>A detailed recreation of Earth with balanced start positions.</Description>
 		<Authors>Your Name</Authors>
 		<Package>Mod</Package>

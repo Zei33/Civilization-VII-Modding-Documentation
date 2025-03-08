@@ -79,7 +79,7 @@ The `.modinfo` file is an XML file that describes your mod to the game. Create a
 <Mod id="com.example.improved-coastal-yields" version="1"
 	xmlns="ModInfo">
 	<Properties>
-		<n>Improved Coastal Yields</n>
+		<Name>Improved Coastal Yields</Name>
 		<Description>This mod increases the yields of coastal tiles.</Description>
 		<Authors>Your Name</Authors>
 		<Package>Mod</Package>

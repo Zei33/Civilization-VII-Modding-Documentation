@@ -71,7 +71,7 @@ If your mod doesn't appear in the in-game mod list:
    ```xml
    <Mod id="your.unique.mod.id" version="1" xmlns="ModInfo">
      <Properties>
-       <n>Your Mod Name</n>
+       <Name>Your Mod Name</Name>
        <Description>Your mod description</Description>
        <Authors>Your Name</Authors>
        <Package>Mod</Package>
