@@ -619,7 +619,7 @@ When your mod causes problems in multiplayer games:
 ### In-Game Console
 
 1. **Enabling the Console**:
-   - Follow instructions in the "HowToEnableIngameConsole" documentation
+   - Follow instructions in the [Debugging Tools section](./advanced-topics.md#in-game-console) of the Advanced Topics guide
    - Press the `~` key (or your configured key) to open the console in-game
 
 2. **Useful Console Commands**:

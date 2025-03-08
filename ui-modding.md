@@ -279,7 +279,7 @@ function createCustomPanel() {
 
 Civilization VII includes a built-in UI debugger based on Chrome Developer Tools. To enable it:
 
-1. Enable the in-game console (see the "HowToEnableIngameConsole" documentation)
+1. Enable the in-game console (see the [Debugging Tools section](./advanced-topics.md#in-game-console) in the Advanced Topics guide)
 2. Press F12 while in-game to open the developer tools
 3. Use the Elements tab to inspect UI elements
 4. Use the Console tab to run JavaScript and see errors

@@ -202,7 +202,7 @@ The WorldBuilder is a graphical tool for creating custom maps by hand.
 
 To access the WorldBuilder:
 
-1. Enable the in-game console (see "HowToEnableIngameConsole" documentation)
+1. Enable the in-game console (see the [Debugging Tools section](./advanced-topics.md#in-game-console) in the Advanced Topics guide)
 2. Press ~ to open the console
 3. Type `WorldBuilder` and press Enter
 

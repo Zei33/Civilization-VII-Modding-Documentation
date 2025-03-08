@@ -719,19 +719,48 @@ local kills = unitTracker.GetKills(123); -- Get the kill count
 
 ### In-Game Console
 
-Enable the in-game console for debugging:
+The in-game console provides powerful debugging tools that allow you to inspect game state, modify values, and test functionality. To enable the in-game console:
 
-1. Locate the `HowToEnableIngameConsole` documentation
-2. Follow the steps to enable the console
-3. Use it to test commands and query game state
+1. Locate your game's AppOptions.txt file:
+   - **Windows**: `C:\Users\[YourUsername]\AppData\Local\Firaxis Games\Sid Meier's Civilization VII\AppOptions.txt`
+   - **MacOS**: `~/Library/Application Support/Civilization VII/AppOptions.txt`
+   - **Linux**: `~/.local/share/Civilization VII/AppOptions.txt`
+
+2. Open the file in any text editor
+
+3. Find the following lines (they may be commented out with semicolons):
+   ```
+   ;Enable Debug Panels. 1 : Enable, 0 : Disable, -1 : Default
+   ;EnableDebugPanels -1
+   ```
+
+4. Change it to:
+   ```
+   EnableDebugPanels 1
+   ```
+
+5. Save the file and restart the game
+
+6. The console can now be accessed in-game using the tilde key (~)
 
 Common console commands:
 ```
-reveal all  -- Reveals the entire map
-unitdata    -- Shows data about selected unit
-debugculture  -- Shows culture borders clearly
-fow off     -- Turns off fog of war
+reveal all       -- Reveals the entire map
+unitdata         -- Shows data about selected unit
+debugculture     -- Shows culture borders clearly
+fow off          -- Turns off fog of war
+yield icons      -- Toggles yield icons
+killunit         -- Destroys the selected unit
+addgold 1000     -- Adds gold to current player
+addscience 500   -- Adds science to current player
+boost <techname> -- Boosts the specified tech
+victory          -- Shows victory progress screen
+debug report     -- Generates a debug report
 ```
+
+For a complete list of console commands, enter `help` in the console.
+
+> **Note:** Using the console commands is considered "cheating" in normal gameplay. Only use it for debugging and testing purposes.
 
 ### Debug Output
 
