@@ -2,7 +2,7 @@
 
 FireTuner (also known as LiveTuner) is an advanced debugging and modding companion application that runs alongside Civilization VII. This tool was originally developed for Civilization VI but can be used with Civilization VII with some adaptations.
 
-Find the original documentation [here](https://jonathanturnock.github.io/civ-vi-modding/docs/)
+Find the original documentation [here](https://jonathanturnock.github.io/civ-vi-modding/docs/).
 
 > **Note:** This documentation is based on the FireTuner functionality from Civilization VI, adapted for use with Civilization VII. While most functionality should work similarly, there may be some differences or limitations.
 
