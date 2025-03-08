@@ -30,17 +30,12 @@ Civilization VII looks for mods in a specific directory:
 
 ### Windows
 ```
-C:\Users\[YourUsername]\Documents\My Games\Civilization VII\Mods
+C:\Users\{USER}\AppData\Local\Firaxis Games\Sid Meier's Civilization VII
 ```
 
 ### macOS
 ```
-/Users/[YourUsername]/Library/Application Support/Civilization VII/Mods
-```
-
-### Linux
-```
-~/.local/share/Civilization VII/Mods
+~/Library/Application Support/Civilization VII/Mods
 ```
 
 ## Creating Your First Mod
