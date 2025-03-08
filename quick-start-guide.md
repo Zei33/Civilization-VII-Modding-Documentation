@@ -2,9 +2,6 @@
 
 This guide will walk you through the process of creating your first Civilization VII mod. By the end, you'll understand the basic workflow and be ready to create more complex mods.
 
-> [!TIP]
-> Game version 1.1.0 (Information based on available data as of 2025-03-08)
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
