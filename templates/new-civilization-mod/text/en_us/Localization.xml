@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<!-- Mod Info -->
+		<Row Tag="LOC_MOD_CUSTOM_CIVILIZATION_NAME">
+			<Text>Custom Civilization</Text>
+		</Row>
+		<Row Tag="LOC_MOD_CUSTOM_CIVILIZATION_DESCRIPTION">
+			<Text>Adds a new custom civilization to Civilization VII.</Text>
+		</Row>
+		
+		<!-- Civilization -->
+		<Row Tag="LOC_CIVILIZATION_CUSTOM_NAME">
+			<Text>Custom Civilization</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_CUSTOM_DESCRIPTION">
+			<Text>A powerful coastal civilization known for their naval prowess and trading skills.</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_CUSTOM_ADJECTIVE">
+			<Text>Custom</Text>
+		</Row>
+		
+		<!-- Leader -->
+		<Row Tag="LOC_LEADER_CUSTOM_NAME">
+			<Text>Custom Leader</Text>
+		</Row>
+		<Row Tag="LOC_LEADER_CUSTOM_DESCRIPTION">
+			<Text>A visionary leader who unified the coastal tribes and established a powerful maritime empire.</Text>
+		</Row>
+		
+		<!-- Traits -->
+		<Row Tag="LOC_TRAIT_CIVILIZATION_CUSTOM_ABILITY_NAME">
+			<Text>Maritime Heritage</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_CUSTOM_ABILITY_DESCRIPTION">
+			<Text>+1 [ICON_Food] Food from coastal tiles. Naval units gain +1 [ICON_Movement] Movement.</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_CUSTOM_ABILITY_NAME">
+			<Text>Expansionist Vision</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_CUSTOM_ABILITY_DESCRIPTION">
+			<Text>Cities gain 10% increased [ICON_Production] Production when constructing districts adjacent to water.</Text>
+		</Row>
+		
+		<!-- Agenda -->
+		<Row Tag="LOC_AGENDA_CUSTOM_NAME">
+			<Text>Maritime Ambition</Text>
+		</Row>
+		<Row Tag="LOC_AGENDA_CUSTOM_DESCRIPTION">
+			<Text>Values civilizations with strong navies and coastal settlements. Dislikes those who ignore the sea.</Text>
+		</Row>
+		
+		<!-- Unique Unit -->
+		<Row Tag="LOC_UNIT_CUSTOM_NAME">
+			<Text>Coastal Warrior</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_CUSTOM_DESCRIPTION">
+			<Text>Custom civilization unique unit that replaces the Swordsman. +5 [ICON_Strength] Combat Strength when fighting on coastal tiles.</Text>
+		</Row>
+		
+		<!-- Unique Building -->
+		<Row Tag="LOC_BUILDING_CUSTOM_NAME">
+			<Text>Trading Port</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_CUSTOM_DESCRIPTION">
+			<Text>Unique building for the Custom civilization. Provides +2 [ICON_Gold] Gold and +1 [ICON_Food] Food to all coastal tiles in the city.</Text>
+		</Row>
+		
+		<!-- City Names -->
+		<Row Tag="LOC_CITY_NAME_CUSTOM_CAPITAL">
+			<Text>Great Harbor</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_CUSTOM_1">
+			<Text>Coastal Haven</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_CUSTOM_2">
+			<Text>Tide's End</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_CUSTOM_3">
+			<Text>Azure Bay</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_CUSTOM_4">
+			<Text>Coral Ridge</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_CUSTOM_5">
+			<Text>Wave Point</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_CUSTOM_6">
+			<Text>Sea Gate</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_CUSTOM_7">
+			<Text>Salt Harbor</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_CUSTOM_8">
+			<Text>Ocean's Edge</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_CUSTOM_9">
+			<Text>Pearl Coast</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_CUSTOM_10">
+			<Text>Mariner's Rest</Text>
+		</Row>
+	</LocalizedText>
+</GameData> 

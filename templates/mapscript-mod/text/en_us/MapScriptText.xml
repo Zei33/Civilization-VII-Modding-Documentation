@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<!-- Map Script Name and Description -->
+		<Row Tag="LOC_MAPSCRIPT_CUSTOM_ARCHIPELAGO_NAME">
+			<Text>Custom Archipelago</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_CUSTOM_ARCHIPELAGO_DESCRIPTION">
+			<Text>A custom map script that generates a world with numerous islands of varying sizes.</Text>
+		</Row>
+		
+		<!-- Map Script Options -->
+		<Row Tag="LOC_MAPSCRIPT_ISLAND_SIZE_NAME">
+			<Text>Island Size</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_ISLAND_SIZE_SMALL">
+			<Text>Small</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_ISLAND_SIZE_SMALL_DESCRIPTION">
+			<Text>Generate small islands that can typically support 1-2 cities.</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_ISLAND_SIZE_MEDIUM">
+			<Text>Medium</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_ISLAND_SIZE_MEDIUM_DESCRIPTION">
+			<Text>Generate medium islands that can typically support 2-3 cities.</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_ISLAND_SIZE_LARGE">
+			<Text>Large</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_ISLAND_SIZE_LARGE_DESCRIPTION">
+			<Text>Generate large islands that can typically support 3-4 cities.</Text>
+		</Row>
+		
+		<Row Tag="LOC_MAPSCRIPT_ISLAND_COUNT_NAME">
+			<Text>Island Frequency</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_ISLAND_COUNT_FEW">
+			<Text>Few</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_ISLAND_COUNT_FEW_DESCRIPTION">
+			<Text>Generate a smaller number of islands with more ocean between them.</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_ISLAND_COUNT_MODERATE">
+			<Text>Moderate</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_ISLAND_COUNT_MODERATE_DESCRIPTION">
+			<Text>Generate a moderate number of islands balanced with ocean areas.</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_ISLAND_COUNT_MANY">
+			<Text>Many</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_ISLAND_COUNT_MANY_DESCRIPTION">
+			<Text>Generate many islands with less ocean between them.</Text>
+		</Row>
+		
+		<Row Tag="LOC_MAPSCRIPT_SEA_LEVEL_NAME">
+			<Text>Sea Level</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_SEA_LEVEL_LOW">
+			<Text>Low</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_SEA_LEVEL_LOW_DESCRIPTION">
+			<Text>More land is exposed with lower sea levels.</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_SEA_LEVEL_MEDIUM">
+			<Text>Medium</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_SEA_LEVEL_MEDIUM_DESCRIPTION">
+			<Text>Balanced ratio of land and sea.</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_SEA_LEVEL_HIGH">
+			<Text>High</Text>
+		</Row>
+		<Row Tag="LOC_MAPSCRIPT_SEA_LEVEL_HIGH_DESCRIPTION">
+			<Text>Less land is exposed with higher sea levels.</Text>
+		</Row>
+	</LocalizedText>
+</GameData> 

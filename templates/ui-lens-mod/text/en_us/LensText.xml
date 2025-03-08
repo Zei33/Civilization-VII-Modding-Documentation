@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<!-- Mod Name and Description -->
+		<Row Tag="LOC_MOD_RESOURCE_LENS_NAME">
+			<Text>Resource Potential Lens</Text>
+		</Row>
+		<Row Tag="LOC_MOD_RESOURCE_LENS_DESCRIPTION">
+			<Text>Adds a new map lens that highlights tiles based on their potential for resources.</Text>
+		</Row>
+		
+		<!-- Lens Name and Description -->
+		<Row Tag="LOC_RESOURCE_POTENTIAL_LENS_NAME">
+			<Text>Resource Potential</Text>
+		</Row>
+		<Row Tag="LOC_RESOURCE_POTENTIAL_LENS_DESCRIPTION">
+			<Text>Highlights tiles based on their potential for different types of resources.</Text>
+		</Row>
+		
+		<!-- Legend Text -->
+		<Row Tag="LOC_RESOURCE_LENS_LEGEND_TITLE">
+			<Text>Resource Potential</Text>
+		</Row>
+		<Row Tag="LOC_RESOURCE_LENS_LUXURY_POTENTIAL">
+			<Text>Luxury Resource Potential</Text>
+		</Row>
+		<Row Tag="LOC_RESOURCE_LENS_STRATEGIC_POTENTIAL">
+			<Text>Strategic Resource Potential</Text>
+		</Row>
+		<Row Tag="LOC_RESOURCE_LENS_BONUS_POTENTIAL">
+			<Text>Bonus Resource Potential</Text>
+		</Row>
+		<Row Tag="LOC_RESOURCE_LENS_HIGH_POTENTIAL">
+			<Text>High Resource Potential</Text>
+		</Row>
+		
+		<!-- Tooltip Text -->
+		<Row Tag="LOC_RESOURCE_LENS_TOOLTIP">
+			<Text>Toggle the Resource Potential Lens to see which tiles are likely to contain resources.</Text>
+		</Row>
+	</LocalizedText>
+</GameData> 

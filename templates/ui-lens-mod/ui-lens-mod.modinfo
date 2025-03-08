@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="com.example.resource-potential-lens" version="1"
+	xmlns="ModInfo">
+	<Properties>
+		<n>LOC_MOD_RESOURCE_LENS_NAME</n>
+		<Description>LOC_MOD_RESOURCE_LENS_DESCRIPTION</Description>
+		<Authors>Your Name</Authors>
+		<Package>Mod</Package>
+		<AffectsSavedGames>0</AffectsSavedGames>
+	</Properties>
+	<Dependencies>
+		<Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME"/>
+	</Dependencies>
+	<ActionCriteria>
+		<Criteria id="always">
+			<AlwaysMet></AlwaysMet>
+		</Criteria>
+	</ActionCriteria>
+	<ActionGroups>
+		<ActionGroup id="ui-lens-group" scope="game" criteria="always">
+			<Properties>
+				<LoadOrder>1000</LoadOrder>
+			</Properties>
+			<Actions>
+				<ImportFiles>
+					<Item>ui/scripts/resource-potential-lens.js</Item>
+					<Item>ui/styles/resource-lens.css</Item>
+					<Item>ui/icons/resource_lens_icon.png</Item>
+				</ImportFiles>
+				<UpdateText>
+					<Item>text/en_us/LensText.xml</Item>
+				</UpdateText>
+			</Actions>
+		</ActionGroup>
+	</ActionGroups>
+	<LocalizedText>
+		<File>text/en_us/LensText.xml</File>
+	</LocalizedText>
+</Mod> 

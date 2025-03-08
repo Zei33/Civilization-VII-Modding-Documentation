@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="com.example.custom-resources" version="1"
+	xmlns="ModInfo">
+	<Properties>
+		<n>Custom Resources Pack</n>
+		<Description>Adds new luxury resources to the game: Coffee and Jade.</Description>
+		<Authors>Your Name</Authors>
+		<Package>Mod</Package>
+		<AffectsSavedGames>1</AffectsSavedGames>
+	</Properties>
+	<Dependencies>
+		<Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME"/>
+	</Dependencies>
+	<ActionCriteria>
+		<Criteria id="always">
+			<AlwaysMet></AlwaysMet>
+		</Criteria>
+	</ActionCriteria>
+	<ActionGroups>
+		<ActionGroup id="game-custom-resources" scope="game" criteria="always">
+			<Properties>
+				<LoadOrder>25</LoadOrder>
+			</Properties>
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/resources.sql</Item>
+				</UpdateDatabase>
+				<UpdateText>
+					<Item>text/en_us/ResourceText.xml</Item>
+				</UpdateText>
+				<ImportFiles>
+					<Item>art/icons/ICON_RESOURCE_COFFEE.png</Item>
+					<Item>art/icons/ICON_RESOURCE_JADE.png</Item>
+				</ImportFiles>
+			</Actions>
+		</ActionGroup>
+	</ActionGroups>
+	<LocalizedText>
+		<File>text/en_us/ResourceText.xml</File>
+	</LocalizedText>
+</Mod> 

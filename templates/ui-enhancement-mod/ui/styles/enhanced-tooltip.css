@@ -1,0 +1,61 @@
+/* Enhanced Tooltip Styles
+   Author: Your Name
+*/
+
+.enhanced-tooltip {
+	/* Add a golden border to the tooltip */
+	border: 2px solid #FFD700 !important;
+	
+	/* Add a subtle background glow */
+	box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+	
+	/* Slightly increase padding for better readability */
+	padding: 12px !important;
+}
+
+.enhanced-tooltip-info {
+	/* Style for the additional information section */
+	margin-top: 12px;
+	padding-top: 8px;
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
+	color: #E0E0E0;
+	font-style: italic;
+	font-size: 0.9em;
+}
+
+.enhanced-unit-stats {
+	/* Style for unit statistics */
+	margin-top: 8px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 5px;
+}
+
+.enhanced-unit-stats div {
+	/* Individual stat entries */
+	background-color: rgba(0, 0, 0, 0.2);
+	padding: 4px 8px;
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+/* Building specific styling */
+.enhanced-tooltip.building-tooltip .enhanced-tooltip-info {
+	border-top-color: rgba(64, 128, 255, 0.5);
+}
+
+/* Make tooltips a bit larger for better readability */
+.Tooltip {
+	max-width: 350px;
+}
+
+/* Responsive considerations for different UI scales */
+@media (max-width: 1366px) {
+	.enhanced-tooltip-info {
+		font-size: 0.85em;
+	}
+	
+	.Tooltip {
+		max-width: 300px;
+	}
+} 

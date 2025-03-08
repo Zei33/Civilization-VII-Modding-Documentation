@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<!-- Mod Name and Description -->
+		<Row Tag="LOC_MOD_ENHANCED_TOOLTIP_NAME">
+			<Text>Enhanced Tooltips</Text>
+		</Row>
+		<Row Tag="LOC_MOD_ENHANCED_TOOLTIP_DESCRIPTION">
+			<Text>Improves game tooltips with more detailed information and better styling.</Text>
+		</Row>
+		
+		<!-- Tooltip Enhancement Text -->
+		<Row Tag="LOC_ENHANCED_TOOLTIP_UNIT_INFO">
+			<Text>Advanced Unit Information:</Text>
+		</Row>
+		<Row Tag="LOC_ENHANCED_TOOLTIP_BUILDING_INFO">
+			<Text>Advanced Building Information:</Text>
+		</Row>
+		<Row Tag="LOC_ENHANCED_TOOLTIP_MOVEMENT">
+			<Text>Movement Points</Text>
+		</Row>
+		<Row Tag="LOC_ENHANCED_TOOLTIP_COST">
+			<Text>Production Cost</Text>
+		</Row>
+		<Row Tag="LOC_ENHANCED_TOOLTIP_MAINTENANCE">
+			<Text>Maintenance</Text>
+		</Row>
+		<Row Tag="LOC_ENHANCED_TOOLTIP_PREREQUISITES">
+			<Text>Prerequisites</Text>
+		</Row>
+		<Row Tag="LOC_ENHANCED_TOOLTIP_UNLOCKS">
+			<Text>Unlocks</Text>
+		</Row>
+		
+		<!-- Add more localized strings as needed -->
+	</LocalizedText>
+</GameData> 

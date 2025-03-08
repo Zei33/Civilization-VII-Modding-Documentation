@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<!-- Coffee Resource -->
+		<Row Tag="LOC_RESOURCE_COFFEE_NAME">
+			<Text>Coffee</Text>
+		</Row>
+		<Row Tag="LOC_RESOURCE_COFFEE_DESCRIPTION">
+			<Text>Luxury resource that provides +3 [ICON_Gold] Gold and +1 [ICON_Food] Food. Can be improved with a Plantation. Provides Amenities to your cities.</Text>
+		</Row>
+		<Row Tag="LOC_RESOURCE_COFFEE_REMINDER">
+			<Text>You can build a Plantation to improve this resource.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_RESOURCES_PAGE_RESOURCE_COFFEE_CHAPTER_HISTORY_PARA_1">
+			<Text>Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species. First cultivated in Ethiopia, coffee spread to the Arabian Peninsula and then throughout the world, becoming one of the most popular beverages globally. The stimulating effect of the caffeine in coffee made it an important trade commodity throughout history, and today it is the second most valuable legally traded commodity in the world, after oil.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_RESOURCES_PAGE_RESOURCE_COFFEE_CHAPTER_HISTORY_PARA_2">
+			<Text>Coffee cultivation has had both positive and negative historical impacts, fueling colonialist enterprises while later becoming an economic pillar for many developing nations. It continues to be a major economic and cultural force, with distinct preparation styles and cafe cultures emerging around the world.</Text>
+		</Row>
+		
+		<!-- Jade Resource -->
+		<Row Tag="LOC_RESOURCE_JADE_NAME">
+			<Text>Jade</Text>
+		</Row>
+		<Row Tag="LOC_RESOURCE_JADE_DESCRIPTION">
+			<Text>Luxury resource that provides +4 [ICON_Gold] Gold and +1 [ICON_Culture] Culture. Can be improved with a Mine. Provides Amenities to your cities.</Text>
+		</Row>
+		<Row Tag="LOC_RESOURCE_JADE_REMINDER">
+			<Text>You can build a Mine to improve this resource.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_RESOURCES_PAGE_RESOURCE_JADE_CHAPTER_HISTORY_PARA_1">
+			<Text>Jade is a gemstone that has been treasured for thousands of years, particularly in East Asian cultures. There are two distinct minerals that are called jade: nephrite and jadeite. Nephrite was used in prehistoric eras for tools and weapons due to its toughness, while jadeite became highly prized for ornamental purposes due to its vibrant colors and translucency.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_RESOURCES_PAGE_RESOURCE_JADE_CHAPTER_HISTORY_PARA_2">
+			<Text>In Chinese culture, jade has been valued more highly than gold or silver for millennia, symbolizing beauty, nobility, perfection, and immortality. Elaborate jade carvings and burial suits demonstrated the wealth and importance of the deceased. Mesoamerican cultures like the Olmec, Maya, and Aztec also prized jade, using it for ceremonial and religious artifacts. Today, jade continues to be highly valued, particularly in China where the phrase "gold has a value; jade is invaluable" reflects its cultural significance.</Text>
+		</Row>
+	</LocalizedText>
+</GameData> 

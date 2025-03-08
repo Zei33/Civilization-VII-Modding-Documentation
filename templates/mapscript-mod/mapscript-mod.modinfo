@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="com.example.mapscript-archipelago" version="1"
+	xmlns="ModInfo">
+	<Properties>
+		<n>LOC_MAPSCRIPT_CUSTOM_ARCHIPELAGO_NAME</n>
+		<Description>LOC_MAPSCRIPT_CUSTOM_ARCHIPELAGO_DESCRIPTION</Description>
+		<Authors>Your Name</Authors>
+		<Package>Mod</Package>
+		<AffectsSavedGames>0</AffectsSavedGames>
+	</Properties>
+	<Dependencies>
+		<Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME"/>
+	</Dependencies>
+	<ActionCriteria>
+		<Criteria id="always">
+			<AlwaysMet></AlwaysMet>
+		</Criteria>
+	</ActionCriteria>
+	<ActionGroups>
+		<ActionGroup id="setup" scope="game" criteria="always">
+			<Properties>
+				<LoadOrder>500</LoadOrder>
+			</Properties>
+			<Actions>
+				<UpdateText>
+					<Item>text/en_us/MapScriptText.xml</Item>
+				</UpdateText>
+				<MapScripts>
+					<Item>
+						<MapScriptId>MAPSCRIPT_CUSTOM_ARCHIPELAGO</MapScriptId>
+						<Name>LOC_MAPSCRIPT_CUSTOM_ARCHIPELAGO_NAME</Name>
+						<Description>LOC_MAPSCRIPT_CUSTOM_ARCHIPELAGO_DESCRIPTION</Description>
+						<File>maps/scripts/custom_archipelago.lua</File>
+						<SupportsSinglePlayer>1</SupportsSinglePlayer>
+						<SupportsMultiplayer>1</SupportsMultiplayer>
+					</Item>
+				</MapScripts>
+			</Actions>
+		</ActionGroup>
+	</ActionGroups>
+	<LocalizedText>
+		<File>text/en_us/MapScriptText.xml</File>
+	</LocalizedText>
+</Mod> 

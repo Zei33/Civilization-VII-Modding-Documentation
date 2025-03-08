@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="com.example.new-civilization-mod" version="1"
+	xmlns="ModInfo">
+	<Properties>
+		<n>LOC_MOD_CUSTOM_CIVILIZATION_NAME</n>
+		<Description>LOC_MOD_CUSTOM_CIVILIZATION_DESCRIPTION</Description>
+		<Authors>Your Name</Authors>
+		<Package>Mod</Package>
+	</Properties>
+	<Dependencies>
+		<Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME"/>
+	</Dependencies>
+	<ActionCriteria>
+		<Criteria id="always">
+			<AlwaysMet></AlwaysMet>
+		</Criteria>
+	</ActionCriteria>
+	<ActionGroups>
+		<ActionGroup id="game-main" scope="game" criteria="always">
+			<Properties>
+				<LoadOrder>15</LoadOrder>
+			</Properties>
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/civilization.sql</Item>
+				</UpdateDatabase>
+				<UpdateText>
+					<Item>text/en_us/Localization.xml</Item>
+				</UpdateText>
+				<ImportFiles>
+					<Item>art/icons/ICON_CIVILIZATION_CUSTOM.png</Item>
+					<Item>art/icons/ICON_CIVILIZATION_CUSTOM_SMALL.png</Item>
+					<Item>art/icons/ICON_CIVILIZATION_CUSTOM_BACKGROUND.png</Item>
+					<Item>art/icons/ICON_LEADER_CUSTOM.png</Item>
+					<Item>art/icons/ICON_LEADER_CUSTOM_BACKGROUND.png</Item>
+					<Item>art/icons/ICON_UNIT_CUSTOM.png</Item>
+					<Item>art/icons/ICON_BUILDING_CUSTOM.png</Item>
+				</ImportFiles>
+			</Actions>
+		</ActionGroup>
+	</ActionGroups>
+	<LocalizedText>
+		<File>text/en_us/Localization.xml</File>
+	</LocalizedText>
+</Mod> 

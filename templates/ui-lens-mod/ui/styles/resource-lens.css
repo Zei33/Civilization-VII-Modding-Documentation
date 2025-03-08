@@ -1,0 +1,115 @@
+/* ===========================================================================
+   Resource Potential Lens Styles
+   Author: Your Name
+   =========================================================================== */
+
+/* Lens Button Styling */
+.ResourcePotentialLensButton {
+	background-color: rgba(0, 0, 0, 0.7);
+	border: 1px solid #c7a758;
+	border-radius: 4px;
+	margin: 2px;
+	padding: 4px;
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.ResourcePotentialLensButton:hover {
+	background-color: rgba(50, 50, 50, 0.9);
+	border-color: #e9d090;
+	box-shadow: 0 0 5px #e9d090;
+}
+
+.ResourcePotentialLensButton:active {
+	background-color: rgba(80, 80, 80, 0.9);
+	transform: scale(0.95);
+}
+
+.ResourcePotentialLensButton.active {
+	background-color: rgba(100, 100, 50, 0.9);
+	border-color: #ffeb3b;
+	box-shadow: 0 0 8px #ffeb3b;
+}
+
+/* Lens Button Icon */
+.ResourcePotentialLensButton img {
+	width: 24px;
+	height: 24px;
+	filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7));
+}
+
+/* Lens Legend Styling */
+.ResourceLensLegend {
+	position: absolute;
+	bottom: 50px;
+	right: 10px;
+	background-color: rgba(0, 0, 0, 0.7);
+	border: 1px solid #c7a758;
+	border-radius: 4px;
+	padding: 10px;
+	color: #ffffff;
+	font-size: 14px;
+	z-index: 1000;
+	display: none;
+}
+
+.ResourceLensLegend.visible {
+	display: block;
+}
+
+.ResourceLensLegend h3 {
+	margin: 0 0 10px 0;
+	font-size: 16px;
+	text-align: center;
+	color: #e9d090;
+	border-bottom: 1px solid #c7a758;
+	padding-bottom: 5px;
+}
+
+.LegendItem {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+.LegendColor {
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+	border: 1px solid #ffffff;
+}
+
+.LegendColor.luxury {
+	background-color: rgb(255, 215, 0);
+}
+
+.LegendColor.strategic {
+	background-color: rgb(255, 0, 0);
+}
+
+.LegendColor.bonus {
+	background-color: rgb(0, 255, 0);
+}
+
+.LegendColor.high {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1366px) {
+	.ResourceLensLegend {
+		font-size: 12px;
+		padding: 8px;
+	}
+	
+	.ResourceLensLegend h3 {
+		font-size: 14px;
+	}
+	
+	.LegendColor {
+		width: 12px;
+		height: 12px;
+	}
+} 

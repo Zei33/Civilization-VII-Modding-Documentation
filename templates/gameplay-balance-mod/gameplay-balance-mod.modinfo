@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="com.example.gameplay-balance-mod" version="1"
+	xmlns="ModInfo">
+	<Properties>
+		<n>Enhanced Gameplay Balance</n>
+		<Description>A comprehensive gameplay balance mod that adjusts units, buildings, technologies, and civics to create a more balanced and enjoyable game experience.</Description>
+		<Authors>Your Name</Authors>
+		<Package>Mod</Package>
+		<AffectsSavedGames>1</AffectsSavedGames>
+	</Properties>
+	<Dependencies>
+		<Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME"/>
+	</Dependencies>
+	<ActionCriteria>
+		<Criteria id="always">
+			<AlwaysMet></AlwaysMet>
+		</Criteria>
+	</ActionCriteria>
+	<ActionGroups>
+		<ActionGroup id="gameplay-balance" scope="game" criteria="always">
+			<Properties>
+				<LoadOrder>20</LoadOrder>
+			</Properties>
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/units.sql</Item>
+					<Item>data/buildings.sql</Item>
+					<Item>data/technologies.sql</Item>
+				</UpdateDatabase>
+			</Actions>
+		</ActionGroup>
+	</ActionGroups>
+	<FrontEndActions>
+		<UpdateText id="balancemodtexts">
+		</UpdateText>
+	</FrontEndActions>
+</Mod> 
