@@ -93,6 +93,7 @@ The Civilization VII modding community has additional resources that complement 
 - [Civfanatics Tutorial Forums](https://forums.civfanatics.com/forums/tutorials.659/)
 - [Civilization Modding Discord](https://discord.gg/F9ehXUu9Qk)
 - [Official Civilization Discord](https://discord.gg/KMSVXuhwP6)
+- [Civfanatics VII Mod Downloads](https://forums.civfanatics.com/resources/categories/civilization-vii-downloads.181/)
 
 ## Contributing
 
