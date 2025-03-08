@@ -700,3 +700,28 @@ When your mod causes problems in multiplayer games:
    - `player Gold 10000` - Gives current player 10,000 gold
    - `player AddAllTechs` - Unlocks all technologies
    - `player AddAllCivics`
+
+### FireTuner
+
+As an alternative to the in-game console, the FireTuner provides more advanced debugging capabilities:
+
+1. **Setting Up FireTuner**:
+   - Follow the comprehensive guide in the [FireTuner documentation](./firetuner.md)
+   - FireTuner allows real-time code execution and game state inspection
+
+2. **Key FireTuner Features**:
+   - JavaScript/Lua console with autocomplete
+   - Custom debug panels for specific game functions
+   - Autoplay feature for automated testing
+   - Deep access to game objects and state
+   - Real-time visualization of game data
+
+> **Note:** FireTuner was developed for Civilization VI but can be adapted for use with Civilization VII. Refer to the [FireTuner documentation](./firetuner.md) for details on compatibility and setup.
+
+## Common Error Messages
+
+## Compatibility with Other Mods
+
+## Getting Help from the Community
+
+## Related Documentation

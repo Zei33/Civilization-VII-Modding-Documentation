@@ -762,6 +762,17 @@ For a complete list of console commands, enter `help` in the console.
 
 > **Note:** Using the console commands is considered "cheating" in normal gameplay. Only use it for debugging and testing purposes.
 
+### FireTuner Debug Tool
+
+For more advanced debugging capabilities, you can use the FireTuner tool:
+
+- **Enhanced Debugging**: FireTuner provides a more powerful interface for debugging than the in-game console
+- **Live Code Execution**: Execute JavaScript/Lua code in the running game environment
+- **Custom Debug Panels**: Access specialized panels for various game systems
+- **Autoplay Testing**: Run automated game sessions for testing
+
+For detailed instructions on setting up and using FireTuner with Civilization VII, see the [FireTuner documentation](./firetuner.md).
+
 ### Debug Output
 
 Add debug logging to your mod:

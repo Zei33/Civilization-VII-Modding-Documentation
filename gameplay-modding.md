@@ -812,6 +812,15 @@ player Gold 10000    -- Gives current player 10,000 gold
 tech all             -- Unlocks all technologies
 ```
 
+For more advanced testing and debugging capabilities, consider using the FireTuner tool:
+
+- Provides deeper access to game objects and systems
+- Allows execution of custom JavaScript/Lua code in real-time
+- Features automated testing through the Autoplay functionality
+- Enables detailed inspection of mod components and game state
+
+See the [FireTuner documentation](./firetuner.md) for setup instructions and usage examples.
+
 ### Logging
 
 Add logging to your Lua scripts to diagnose issues:

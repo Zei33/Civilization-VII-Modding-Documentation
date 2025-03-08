@@ -368,6 +368,21 @@ Civilization VII includes a built-in UI debugger based on Chrome Developer Tools
 4. Use the Console tab to run JavaScript and see errors
 5. Use the Network tab to monitor communication
 
+### Using FireTuner for UI Debugging
+
+FireTuner provides additional capabilities for UI debugging:
+
+1. Set up FireTuner as described in the [FireTuner documentation](./firetuner.md)
+2. Connect to the game and select the "App UI" context from the dropdown menu
+3. Use FireTuner to execute JavaScript that interacts with UI elements
+4. Inspect UI state and test changes in real-time
+
+FireTuner is particularly helpful when:
+- Debugging complex UI interactions
+- Testing UI behavior across game state changes
+- Exploring available UI functions and objects
+- Automating UI testing scenarios
+
 ### Common Debugging Techniques
 
 - Use `console.log()` to output debug information
