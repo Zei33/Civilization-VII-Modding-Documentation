@@ -696,7 +696,7 @@ VALUES ('VICTORY_OTTOMAN_IMPERIAL', 'CIVILIZATION_OTTOMAN');
 - [Database Modding Guide](./database-modding.md) - For detailed database structure information
 - [Asset Creation Guide](./asset-creation.md) - For creating civilization art assets
 - [Gameplay Modding Guide](./gameplay-modding.md) - For implementing unique gameplay mechanics
-- [New Civilization Mod Template](./Templates/new-civilization-mod/) - A ready-to-use template for creating a new civilization
+- [New Civilization Mod Template](./templates/new-civilization-mod/) - A ready-to-use template for creating a new civilization
 
 ---
 

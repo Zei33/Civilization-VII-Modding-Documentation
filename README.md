@@ -20,13 +20,13 @@ If you're new to modding Civilization VII, we recommend starting with these guid
 
 To help you get started quickly, we've provided several template projects:
 
-- [Basic Database Mod Template](./Templates/basic-database-mod/) - For simple database modifications
-- [UI Enhancement Mod Template](./Templates/ui-enhancement-mod/) - For customizing the user interface
-- [New Civilization Mod Template](./Templates/new-civilization-mod/) - For creating new civilizations
-- [Map Script Mod Template](./Templates/mapscript-mod/) - For creating custom map generation scripts
-- [Gameplay Balance Mod Template](./Templates/gameplay-balance-mod/) - For balancing gameplay elements
-- [Custom Resource Mod Template](./Templates/custom-resource-mod/) - For adding new resources to the game
-- [UI Lens Mod Template](./Templates/ui-lens-mod/) - For creating custom map lenses
+- [Basic Database Mod Template](./templates/basic-database-mod/) - For simple database modifications
+- [UI Enhancement Mod Template](./templates/ui-enhancement-mod/) - For customizing the user interface
+- [New Civilization Mod Template](./templates/new-civilization-mod/) - For creating new civilizations
+- [Map Script Mod Template](./templates/mapscript-mod/) - For creating custom map generation scripts
+- [Gameplay Balance Mod Template](./templates/gameplay-balance-mod/) - For balancing gameplay elements
+- [Custom Resource Mod Template](./templates/custom-resource-mod/) - For adding new resources to the game
+- [UI Lens Mod Template](./templates/ui-lens-mod/) - For creating custom map lenses
 
 ## Core Modding Guides
 

@@ -352,8 +352,8 @@ For more information on topics related to database modding, refer to these guide
 
 - [Mod Structure Guide](./mod-structure.md) - Learn about the overall structure of mods
 - [Quick Start Guide](./quick-start-guide.md) - Get started with your first mod
-- [Basic Database Mod Template](./Templates/basic-database-mod/) - A ready-to-use template for database modifications
-- [Custom Resource Mod Template](./Templates/custom-resource-mod/) - A ready-to-use template for adding new resources
+- [Basic Database Mod Template](./templates/basic-database-mod/) - A ready-to-use template for database modifications
+- [Custom Resource Mod Template](./templates/custom-resource-mod/) - A ready-to-use template for adding new resources
 
 ---
 

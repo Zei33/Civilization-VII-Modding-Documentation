@@ -998,7 +998,7 @@ For more information on topics related to gameplay modding, refer to these guide
 - [Database Modding Guide](./database-modding.md) - For detailed database structure information
 - [UI Modding Guide](./ui-modding.md) - For creating UI elements that support gameplay features
 - [Advanced Topics](./advanced-topics.md) - For more complex gameplay systems
-- [Gameplay Balance Mod Template](./Templates/gameplay-balance-mod/) - A ready-to-use template for gameplay balance modifications
+- [Gameplay Balance Mod Template](./templates/gameplay-balance-mod/) - A ready-to-use template for gameplay balance modifications
 
 ## Conclusion
 

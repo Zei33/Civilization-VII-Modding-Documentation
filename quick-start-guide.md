@@ -153,17 +153,17 @@ Now that you've created your first mod, you can explore more complex modding:
 - Explore [UI Modding](./ui-modding.md) to customize the game interface
 - Check out [Gameplay Modding](./gameplay-modding.md) to alter game rules
 
-## Example Templates
+## Example templates
 
 To help you get started with more complex mods, check out these template projects:
 
-- [Basic Database Mod Template](./Templates/basic-database-mod/) - A simple template for database modifications
-- [UI Enhancement Mod Template](./Templates/ui-enhancement-mod/) - A template for enhancing the game's UI
-- [New Civilization Mod Template](./Templates/new-civilization-mod/) - A template for creating a new civilization
-- [Map Script Mod Template](./Templates/mapscript-mod/) - A template for custom map generation scripts
-- [Gameplay Balance Mod Template](./Templates/gameplay-balance-mod/) - A template for gameplay balance changes
-- [Custom Resource Mod Template](./Templates/custom-resource-mod/) - A template for adding new resources
-- [UI Lens Mod Template](./Templates/ui-lens-mod/) - A template for creating custom map lenses
+- [Basic Database Mod Template](./templates/basic-database-mod/) - A simple template for database modifications
+- [UI Enhancement Mod Template](./templates/ui-enhancement-mod/) - A template for enhancing the game's UI
+- [New Civilization Mod Template](./templates/new-civilization-mod/) - A template for creating a new civilization
+- [Map Script Mod Template](./templates/mapscript-mod/) - A template for custom map generation scripts
+- [Gameplay Balance Mod Template](./templates/gameplay-balance-mod/) - A template for gameplay balance changes
+- [Custom Resource Mod Template](./templates/custom-resource-mod/) - A template for adding new resources
+- [UI Lens Mod Template](./templates/ui-lens-mod/) - A template for creating custom map lenses
 
 ## Common Problems and Solutions
 

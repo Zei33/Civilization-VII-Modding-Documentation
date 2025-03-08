@@ -518,8 +518,8 @@ For more information on topics related to UI modding, refer to these guides:
 - [CSS Styling Guide](./css-styling-guide.md) - Detailed guide on styling UI elements
 - [UI Component Reference](./ui-component-reference.md) - Reference for built-in UI components
 - [Coherent UI Documentation](./coherent-ui-readme.md) - Information on the UI framework
-- [UI Enhancement Mod Template](./Templates/ui-enhancement-mod/) - A ready-to-use template for UI modifications
-- [UI Lens Mod Template](./Templates/ui-lens-mod/) - A ready-to-use template for creating custom map lenses
+- [UI Enhancement Mod Template](./templates/ui-enhancement-mod/) - A ready-to-use template for UI modifications
+- [UI Lens Mod Template](./templates/ui-lens-mod/) - A ready-to-use template for creating custom map lenses
 
 ## Conclusion
 

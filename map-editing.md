@@ -937,7 +937,7 @@ end
 
 - [Gameplay Modding Guide](./gameplay-modding.md) - For integrating map features with gameplay
 - [Database Modding Guide](./database-modding.md) - For understanding terrain and feature definitions
-- [Map Script Mod Template](./Templates/mapscript-mod/) - A ready-to-use template for creating custom map scripts
+- [Map Script Mod Template](./templates/mapscript-mod/) - A ready-to-use template for creating custom map scripts
 
 ---
 
